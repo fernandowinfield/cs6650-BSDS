@@ -34,16 +34,30 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
     }
 
     String[] splitPath = urlPath.split("/");
-    String[] urlParts = Arrays.copyOfRange(splitPath, 1, splitPath.length); // get rid of leading empty item
-    // and now validate url path and return the response status code
-    // (and maybe also some value if input is valid)
+    String[] urlParts = Arrays.copyOfRange(splitPath, 1, splitPath.length); // Get rid of leading empty item
 
+    // Validate url path
     if (!isUrlValid(urlParts)) {
       res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
       res.getWriter().write("{\"error message\": \"invalid inputs\"}");
     } else {
+      int totalVertical = 0;
+      String resortID = "";
+      LiftRideDao liftRideDao = new LiftRideDao();
+
+      // URL path has been validated, now identify which GET endpoint is being hit
+      if (urlParts[1].equals(DAYS_PARAM)) {
+        resortID = urlParts[0];
+        String dayID = urlParts[2];
+        String skierID = urlParts[4];
+        totalVertical = liftRideDao.getVertical1(resortID, dayID, skierID); // /skiers/{resortID}/days/{dayID}/skiers/{skierID}
+      } else if (urlParts[1].equals(VERTICAL_PARAM)) {
+        String skierID = urlParts[0];
+        resortID = req.getParameter("resort");
+        totalVertical = liftRideDao.getVertical2(skierID, resortID); // /skiers/{skierID}/vertical
+      }
       res.setStatus(HttpServletResponse.SC_OK);
-      res.getWriter().write("{\"resortID\": \"Mission Ridge\", \"totalVert\": \"56734\"}");
+      res.getWriter().write("{\"resortID\": \"" + resortID + "\", \"totalVert\": \"" + totalVertical + "\"}");
     }
   }
 
@@ -86,6 +100,18 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         res.getWriter().write("{\"error message\": \"invalid body content\"}");
       } else {
+        // Write lift ride to database
+        String resortID = jsonMap.get("resortID");
+        String dayID = jsonMap.get("dayID");
+        String skierID = jsonMap.get("skierID");
+        String time = jsonMap.get("time");
+        String liftID = jsonMap.get("liftID");
+        int vertical = Integer.valueOf(liftID) * 10;
+        LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
+        LiftRideDao liftRideDao = new LiftRideDao();
+        liftRideDao.createLiftRide(liftRide);
+
+        // Send response status
         res.setStatus(HttpServletResponse.SC_CREATED);
       }
     }
