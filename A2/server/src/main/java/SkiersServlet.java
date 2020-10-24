@@ -56,8 +56,12 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         resortID = req.getParameter("resort");
         totalVertical = liftRideDao.getVertical2(skierID, resortID); // /skiers/{skierID}/vertical
       }
-      res.setStatus(HttpServletResponse.SC_OK);
-      res.getWriter().write("{\"resortID\": \"" + resortID + "\", \"totalVert\": \"" + totalVertical + "\"}");
+      if (totalVertical == 0) {
+        res.setStatus(HttpServletResponse.SC_NO_CONTENT);
+      } else {
+        res.setStatus(HttpServletResponse.SC_OK);
+        res.getWriter().write("{\"resortID\": \"" + resortID + "\", \"totalVert\": \"" + totalVertical + "\"}");
+      }
     }
   }
 
