@@ -4,11 +4,18 @@ public class DBCPDataSource {
   private static BasicDataSource dataSource;
 
   // NEVER store sensitive information below in plain text!
-  private static final String HOST_NAME = System.getProperty("MYSQL_IP_ADDRESS");
-  private static final String PORT = System.getProperty("MYSQL_PORT");
+//  private static final String HOST_NAME = System.getProperty("MYSQL_IP_ADDRESS");
+//  private static final String PORT = System.getProperty("MYSQL_PORT");
+//  private static final String DATABASE = "IkkyoneSkiing";
+//  private static final String USERNAME = System.getProperty("DB_USERNAME");
+//  private static final String PASSWORD = System.getProperty("DB_PASSWORD");
+
+  // TODO: get rid of hardcoded values and use `System.getProperty()`
+  private static final String HOST_NAME = "cs6650-database.csaao3sspnfl.us-east-1.rds.amazonaws.com";
+  private static final String PORT = "3306";
   private static final String DATABASE = "IkkyoneSkiing";
-  private static final String USERNAME = System.getProperty("DB_USERNAME");
-  private static final String PASSWORD = System.getProperty("DB_PASSWORD");
+  private static final String USERNAME = "root";
+  private static final String PASSWORD = "chipsNguac";
 
   static {
     // https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-jdbc-url-format.html

@@ -28,6 +28,9 @@ public class RequestsThread implements Runnable {
   private int phase;
   private int getRequestsNum;
   private BlockingQueue<String> queue;
+  private String resortID;
+  private String dayID;
+  private int numLifts;
 
   public RequestsThread(int skierIdsStart,
                         int skierIdsEnd,
@@ -40,7 +43,10 @@ public class RequestsThread implements Runnable {
                         CountDownLatch partialPhaseCompleted,
                         CountDownLatch allPhasesCompleted,
                         int phase,
-                        BlockingQueue<String> queue) {
+                        BlockingQueue<String> queue,
+                        String resortID,
+                        String dayID,
+                        int numLifts) {
     this.skierIdsStart = skierIdsStart;
     this.getSkierIdsEnd = skierIdsEnd;
     this.timeStart = timeStart;
@@ -66,6 +72,9 @@ public class RequestsThread implements Runnable {
         this.getRequestsNum = GET_REQUESTS_PHASE_1;
     }
     this.queue = queue;
+    this.resortID = resortID;
+    this.dayID = dayID;
+    this.numLifts = numLifts;
   }
 
   @Override
@@ -78,11 +87,11 @@ public class RequestsThread implements Runnable {
     for (int j=0; j < POST_REQUESTS; j++) {
       int liftTime = ThreadLocalRandom.current().nextInt(this.timeStart, this.timeEnd + 1);
       int skierIdForPost = ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1);
-      int liftId = ThreadLocalRandom.current().nextInt(1, 30 + 1);
+      int liftId = ThreadLocalRandom.current().nextInt(5, this.numLifts + 1);
 
       LiftRide liftRide = new LiftRide();
-      liftRide.setResortID("Mission Ridge");
-      liftRide.setDayID("1");
+      liftRide.setResortID(this.resortID);
+      liftRide.setDayID(this.dayID);
       liftRide.setSkierID(String.valueOf(skierIdForPost));
       liftRide.setTime(String.valueOf(liftTime));
       liftRide.setLiftID(String.valueOf(liftId));
@@ -106,10 +115,11 @@ public class RequestsThread implements Runnable {
       }
     }
     for (int k=0; k < this.getRequestsNum; k++) {
+      String skierIdForGET = String.valueOf(ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1));
       long requestStart = System.currentTimeMillis();
 
       try {
-        this.apiInstance.getSkierDayVertical("resortid", "dayid", "skierid");
+        this.apiInstance.getSkierDayVertical(this.resortID, this.dayID, skierIdForGET);
         long requestEnd = System.currentTimeMillis();
         this.requestsCompleted.inc();
         long latency = requestEnd - requestStart;
@@ -121,9 +131,10 @@ public class RequestsThread implements Runnable {
         }
       } catch(ApiException e) {
         this.requestsFailed.inc();
-        logger.error("GET request failed in " + String.valueOf(this.phase));
+        logger.error("GET1 request failed in " + String.valueOf(this.phase));
       }
     }
+    // Phase 3 is the last phase, so no one is waiting for it to be partially completed
     if (this.phase != 3) {
       this.partialPhaseCompleted.countDown();
     }

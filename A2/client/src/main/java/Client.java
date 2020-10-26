@@ -53,7 +53,7 @@ public class Client {
     int maxThreads = Integer.parseInt(commandLineArgsMap.get("maxThreads"));
     int numSkiers = Integer.parseInt(commandLineArgsMap.get("numSkiers"));
     int numLifts = Integer.parseInt(commandLineArgsMap.get("numLifts"));
-    int skiDayNum = Integer.parseInt(commandLineArgsMap.get("skiDayNum"));
+    String skiDayNum = commandLineArgsMap.get("skiDayNum");
     String resortId = commandLineArgsMap.get("resortId");
     String serverAddress = commandLineArgsMap.get("serverAddress");
 
@@ -98,7 +98,10 @@ public class Client {
           partialPhase1Completed,
           allPhasesCompleted,
           1,
-          queue);
+          queue,
+          resortId,
+          skiDayNum,
+          numLifts);
       new Thread(thread).start();
     }
     partialPhase1Completed.await();
@@ -120,7 +123,10 @@ public class Client {
           partialPhase2Completed,
           allPhasesCompleted,
           2,
-          queue);
+          queue,
+          resortId,
+          skiDayNum,
+          numLifts);
       new Thread(thread).start();
     }
     partialPhase2Completed.await();
@@ -142,7 +148,10 @@ public class Client {
           partialPhase1Completed,
           allPhasesCompleted,
           3,
-          queue);
+          queue,
+          resortId,
+          skiDayNum,
+          numLifts);
       new Thread(thread).start();
     }
     // Phase 3 END
