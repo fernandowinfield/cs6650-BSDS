@@ -29,7 +29,7 @@ public class DBCPDataSource {
     dataSource.setUrl(url);
     dataSource.setUsername(USERNAME);
     dataSource.setPassword(PASSWORD);
-    dataSource.setInitialSize(10);
+    dataSource.setInitialSize(50);
     dataSource.setMaxTotal(60);
   }
 

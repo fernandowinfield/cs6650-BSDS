@@ -13,7 +13,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 
 public class Client {
-  private static final String BASE_URL_PATH = "http://ec2-34-224-2-148.compute-1.amazonaws.com:8080/java-server_war";
+  // Single server setting
+  //private static final String BASE_URL_PATH = "http://ec2-34-224-2-148.compute-1.amazonaws.com:8080/server_war";
+
+  // Load balancer & 4 server instances setting
+  private static final String BASE_URL_PATH = "http://cs6650-loadbalancer-122971422.us-east-1.elb.amazonaws.com:8080/server_war";
+
 
   /*
    * This is the main function that executes the experiment described in Assignment 1.
@@ -166,32 +171,55 @@ public class Client {
     long durationInMilliseconds = endTime - startTime;
     double throughput = (requestsCompleted.getVal() + requestsFailed.getVal()) / (durationInMilliseconds / 1000);
     List<Integer> latenciesPOST = readLatenciesFromCsv("POST");
-    List<Integer> latenciesGET = readLatenciesFromCsv("GET");
+    List<Integer> latenciesGET1 = readLatenciesFromCsv("GET1");
+    List<Integer> latenciesGET2 = readLatenciesFromCsv("GET2");
     Collections.sort(latenciesPOST);
-    Collections.sort(latenciesGET);
+    Collections.sort(latenciesGET1);
+    Collections.sort(latenciesGET2);
+
     double latenciesPOSTMean = calculateMean(latenciesPOST);
-    double latenciesGETMean = calculateMean(latenciesGET);
+    double latenciesGET1Mean = calculateMean(latenciesGET1);
+    double latenciesGET2Mean = calculateMean(latenciesGET2);
     double latenciesPOSTMedian = calculateMedian(latenciesPOST);
-    double latenciesGETMedian = calculateMedian(latenciesGET);
-    int maxPOSTLatency = latenciesPOST.get(latenciesPOST.size()-1);
-    int maxGETLatency = latenciesGET.get(latenciesGET.size()-1);
+    double latenciesGET1Median = calculateMedian(latenciesGET1);
+    double latenciesGET2Median = calculateMedian(latenciesGET2);
     double latenciesPOSTPercentile99 = calculatePercentile(latenciesPOST, 99);
-    double latenciesGETPercentile99 = calculatePercentile(latenciesGET, 99);
+    double latenciesGET1Percentile99 = calculatePercentile(latenciesGET1, 99);
+    double latenciesGET2Percentile99 = calculatePercentile(latenciesGET2, 99);
+    int maxPOSTLatency = latenciesPOST.get(latenciesPOST.size()-1);
+    int maxGET1Latency = latenciesGET1.get(latenciesGET1.size()-1);
+    int maxGET2Latency = latenciesGET2.get(latenciesGET2.size()-1);
 
     // Print experiment results
+    System.out.println("<---------API legends--------->");
+    System.out.println("POST: /skiers/liftrides");
+    System.out.println("GET1: /skiers/{resortID}/days/{dayID}/skiers/{skierID}");
+    System.out.println("GET2: /skiers/{skierID}/vertical");
+    System.out.println("<------------------------------>\n");
+    System.out.println("<---------General info--------->");
     System.out.println("maxThreads: " + maxThreads);
     System.out.println("Successful requests: " + requestsCompleted.getVal());
     System.out.println("Failed requests: " + requestsFailed.getVal());
     System.out.println("Time taken to complete all requests (wall time): " + durationInMilliseconds + " milliseconds");
-    System.out.println("Requests processed per second (throughput): " + throughput);
+    System.out.println("Requests processed per second (throughput): " + throughput + " requests");
+    System.out.println("<------------------------------>\n");
+    System.out.println("<----Experiment run results---->");
     System.out.println("Mean response time for POSTs: " + latenciesPOSTMean + " milliseconds");
-    System.out.println("Mean response time for GETs: " + latenciesGETMean + " milliseconds");
+    System.out.println("Mean response time for GET1s: " + latenciesGET1Mean + " milliseconds");
+    System.out.println("Mean response time for GET2s: " + latenciesGET2Mean + " milliseconds");
+    System.out.println("-------");
     System.out.println("Median response time for POSTs: " + latenciesPOSTMedian + " milliseconds");
-    System.out.println("Median response time for GETs: " + latenciesGETMedian + " milliseconds");
+    System.out.println("Median response time for GET1s: " + latenciesGET1Median + " milliseconds");
+    System.out.println("Median response time for GET2s: " + latenciesGET2Median + " milliseconds");
+    System.out.println("-------");
     System.out.println("p99 response time for POSTs: " + latenciesPOSTPercentile99 + " milliseconds");
-    System.out.println("p99 response time for GETs: " + latenciesGETPercentile99 + " milliseconds");
+    System.out.println("p99 response time for GET1s: " + latenciesGET1Percentile99 + " milliseconds");
+    System.out.println("p99 response time for GET2s: " + latenciesGET2Percentile99 + " milliseconds");
+    System.out.println("-------");
     System.out.println("Max response time for POSTs: " + maxPOSTLatency + " milliseconds");
-    System.out.println("Max response time for GETs: " + maxGETLatency + " milliseconds");
+    System.out.println("Max response time for GET1s: " + maxGET1Latency + " milliseconds");
+    System.out.println("Max response time for GET2s: " + maxGET2Latency + " milliseconds");
+    System.out.println("<------------------------------>");
   }
 
   private static void processCommandLineArgs(String[] args, Map<String, String> commandLineArgsMap) {
