@@ -15,15 +15,8 @@
       <change beforePath="$PROJECT_DIR$/../../A1/java-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/java-server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/RequestsThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/RequestsThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/RequestsThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/RequestsThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DBCPDataSource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DBCPDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="30">
+              <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -331,12 +324,12 @@
       <updated>1603408646355</updated>
       <workItem from="1603408647557" duration="1771000" />
       <workItem from="1603421604090" duration="20441000" />
-      <workItem from="1603668245862" duration="8265000" />
+      <workItem from="1603668245862" duration="8631000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30477000" />
+    <option name="totallyTimeSpent" value="30843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
@@ -567,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBCPDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="30">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>

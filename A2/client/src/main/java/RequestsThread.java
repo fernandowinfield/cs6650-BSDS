@@ -87,7 +87,7 @@ public class RequestsThread implements Runnable {
 
     Logger logger = LogManager.getRootLogger();
 
-    // POST requests
+    // POST requests ------------------------------------------------------------------------- START
     for (int j=0; j < POST_REQUESTS; j++) {
       int liftTime = ThreadLocalRandom.current().nextInt(this.timeStart, this.timeEnd + 1);
       int skierIdForPost = ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1);
@@ -115,12 +115,39 @@ public class RequestsThread implements Runnable {
           System.out.println("Something went wrong while putting POST request data row into blocking queue");
         }
       } catch (ApiException e) {
-        this.requestsFailed.inc();
-        logger.error("POST request failed in PHASE " + String.valueOf(this.phase));
-        e.printStackTrace();
+//        this.requestsFailed.inc();
+        logger.error("POST request failed in PHASE " + String.valueOf(this.phase) + ". Retrying in 10 seconds");
+//        e.printStackTrace();
+//        int attempts = 0;
+//        attempts++;
+//        Thread.sleep(backOff * attempts);
+        try {
+          Thread.sleep(10000);
+        } catch (InterruptedException interruptedException) {
+          logger.error("Unsuccessful thread sleep during retry");
+        }
+        requestStart = System.currentTimeMillis();
+        try {
+          this.apiInstance.writeNewLiftRide(liftRide);
+          long requestEnd = System.currentTimeMillis();
+          this.requestsCompleted.inc();
+          long latency = requestEnd - requestStart;
+          String requestDataRow = String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
+//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
+          try {
+            this.queue.put(requestDataRow);
+          } catch (InterruptedException interrumptedException2) {
+            System.out.println("Something went wrong while putting POST request data row into blocking queue, after retry");
+          }
+        } catch (ApiException ee) {
+          this.requestsFailed.inc();
+          logger.error("POST request failed again... will not retry");
+        }
       }
     }
-    // GET1 requests
+    // POST requests --------------------------------------------------------------------------- END
+
+    // GET1 requests ------------------------------------------------------------------------- START
     for (int k=0; k < this.getRequestsNum; k++) {
       String skierIdForGET1 = String.valueOf(ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1));
       long requestStart = System.currentTimeMillis();
@@ -132,20 +159,47 @@ public class RequestsThread implements Runnable {
         long latency = requestEnd - requestStart;
         String requestDataRow = String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
 //        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
-
         try {
           this.queue.put(requestDataRow);
         } catch (InterruptedException e) {
           System.out.println("Something went wrong while putting GET1 request data row into blocking queue");
         }
       } catch(ApiException e) {
-        this.requestsFailed.inc();
-        logger.error("GET1 request failed in PHASE " + String.valueOf(this.phase));
+//        this.requestsFailed.inc();
+        logger.error("GET1 request failed in PHASE " + String.valueOf(this.phase) + ". Retrying in 10 seconds");
+//        e.printStackTrace();
+//        int attempts = 0;
+//        attempts++;
+//        Thread.sleep(backOff * attempts);
+        try {
+          Thread.sleep(10000);
+        } catch (InterruptedException interruptedException) {
+          logger.error("Unsuccessful thread sleep during retry");
+        }
+        requestStart = System.currentTimeMillis();
+        try {
+          this.apiInstance.getSkierDayVertical(this.resortID, this.dayID, skierIdForGET1);
+          long requestEnd = System.currentTimeMillis();
+          this.requestsCompleted.inc();
+          long latency = requestEnd - requestStart;
+          String requestDataRow = String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
+//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
+          try {
+            this.queue.put(requestDataRow);
+          } catch (InterruptedException interruptedException2) {
+            System.out.println("Something went wrong while putting GET1 request data row into blocking queue, after retry");
+          }
+        } catch (ApiException ee) {
+          this.requestsFailed.inc();
+          logger.error("GET1 request failed again... will not retry");
+        }
       }
     }
+    // GET1 requests --------------------------------------------------------------------------- END
+
     // Only call GET2 API on phase 3
     if (this.phase == 3) {
-      // GET2 requests
+      // GET2 requests ----------------------------------------------------------------------- START
       for (int k=0; k < this.getRequestsNum; k++) {
         String skierIdForGET2 = String.valueOf(ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1));
         List<String> resortIdForGET2 = new ArrayList<>();
@@ -170,7 +224,9 @@ public class RequestsThread implements Runnable {
           logger.error("GET2 request failed in PHASE " + String.valueOf(this.phase));
         }
       }
+      // GET2 requests ------------------------------------------------------------------------- END
     }
+
     // Phase 3 is the last phase, so only count down the "partial" latch on phases that are not 3
     if (this.phase != 3) {
       this.partialPhaseCompleted.countDown();
