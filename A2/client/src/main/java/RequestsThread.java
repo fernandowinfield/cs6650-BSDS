@@ -102,46 +102,63 @@ public class RequestsThread implements Runnable {
 
       long requestStart = System.currentTimeMillis();
 
+      // First try
       try {
         this.apiInstance.writeNewLiftRide(liftRide);
         long requestEnd = System.currentTimeMillis();
         this.requestsCompleted.inc();
         long latency = requestEnd - requestStart;
-        String requestDataRow = String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
-//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
+        String requestDataRow = requestStart + "," + "POST" + "," + latency + "," + "201" + "\n";
         try {
           this.queue.put(requestDataRow);
         } catch (InterruptedException e) {
           System.out.println("Something went wrong while putting POST request data row into blocking queue");
         }
       } catch (ApiException e) {
-//        this.requestsFailed.inc();
-        logger.error("POST request failed in PHASE " + String.valueOf(this.phase) + ". Retrying in 10 seconds");
-//        e.printStackTrace();
-//        int attempts = 0;
-//        attempts++;
-//        Thread.sleep(backOff * attempts);
+        logger.error("POST request failed in PHASE " + this.phase + ". Retrying a 2nd time");
         try {
           Thread.sleep(10000);
         } catch (InterruptedException interruptedException) {
           logger.error("Unsuccessful thread sleep during retry");
         }
         requestStart = System.currentTimeMillis();
+        // Second try
         try {
           this.apiInstance.writeNewLiftRide(liftRide);
           long requestEnd = System.currentTimeMillis();
           this.requestsCompleted.inc();
           long latency = requestEnd - requestStart;
-          String requestDataRow = String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
-//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "POST" + "," + String.valueOf(latency) + "," + "201" + "\n";
+          String requestDataRow = requestStart + "," + "POST" + "," + latency + "," + "201" + "\n";
           try {
             this.queue.put(requestDataRow);
-          } catch (InterruptedException interrumptedException2) {
-            System.out.println("Something went wrong while putting POST request data row into blocking queue, after retry");
+          } catch (InterruptedException interruptedException2) {
+            System.out.println("Something went wrong while putting POST request data row into blocking queue, during 2nd retry");
           }
         } catch (ApiException ee) {
-          this.requestsFailed.inc();
-          logger.error("POST request failed again... will not retry");
+//          this.requestsFailed.inc();
+          logger.error("POST request failed in PHASE " + this.phase + ". Retrying a 3rd time");
+          try {
+            Thread.sleep(10000);
+          } catch (InterruptedException interruptedException) {
+            logger.error("Unsuccessful thread sleep during retry");
+          }
+          requestStart = System.currentTimeMillis();
+          // Third try
+          try {
+            this.apiInstance.writeNewLiftRide(liftRide);
+            long requestEnd = System.currentTimeMillis();
+            this.requestsCompleted.inc();
+            long latency = requestEnd - requestStart;
+            String requestDataRow = requestStart + "," + "POST" + "," + latency + "," + "201" + "\n";
+            try {
+              this.queue.put(requestDataRow);
+            } catch (InterruptedException interruptedException2) {
+              System.out.println("Something went wrong while putting POST request data row into blocking queue, during 3rd retry");
+            }
+          } catch (ApiException eee) {
+            this.requestsFailed.inc();
+            logger.error("POST 3rd retry failed. Not retrying again");
+          }
         }
       }
     }
@@ -152,46 +169,62 @@ public class RequestsThread implements Runnable {
       String skierIdForGET1 = String.valueOf(ThreadLocalRandom.current().nextInt(this.skierIdsStart, this.getSkierIdsEnd + 1));
       long requestStart = System.currentTimeMillis();
 
+      // First try
       try {
         this.apiInstance.getSkierDayVertical(this.resortID, this.dayID, skierIdForGET1);
         long requestEnd = System.currentTimeMillis();
         this.requestsCompleted.inc();
         long latency = requestEnd - requestStart;
-        String requestDataRow = String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
-//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
+        String requestDataRow = requestStart + "," + "GET1" + "," + latency + "," + "200" + "\n";
         try {
           this.queue.put(requestDataRow);
         } catch (InterruptedException e) {
           System.out.println("Something went wrong while putting GET1 request data row into blocking queue");
         }
       } catch(ApiException e) {
-//        this.requestsFailed.inc();
-        logger.error("GET1 request failed in PHASE " + String.valueOf(this.phase) + ". Retrying in 10 seconds");
-//        e.printStackTrace();
-//        int attempts = 0;
-//        attempts++;
-//        Thread.sleep(backOff * attempts);
+        logger.error("GET1 request failed in PHASE " + this.phase + ". Retrying a 2nd time");
         try {
           Thread.sleep(10000);
         } catch (InterruptedException interruptedException) {
           logger.error("Unsuccessful thread sleep during retry");
         }
         requestStart = System.currentTimeMillis();
+        // Second try
         try {
           this.apiInstance.getSkierDayVertical(this.resortID, this.dayID, skierIdForGET1);
           long requestEnd = System.currentTimeMillis();
           this.requestsCompleted.inc();
           long latency = requestEnd - requestStart;
-          String requestDataRow = String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
-//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "GET1" + "," + String.valueOf(latency) + "," + "200" + "\n";
+          String requestDataRow = requestStart + "," + "GET1" + "," + latency + "," + "200" + "\n";
           try {
             this.queue.put(requestDataRow);
           } catch (InterruptedException interruptedException2) {
-            System.out.println("Something went wrong while putting GET1 request data row into blocking queue, after retry");
+            System.out.println("Something went wrong while putting GET1 request data row into blocking queue, during 2nd retry");
           }
         } catch (ApiException ee) {
-          this.requestsFailed.inc();
-          logger.error("GET1 request failed again... will not retry");
+          logger.error("GET1 request failed in PHASE " + this.phase + ". Retrying a 3rd time");
+          try {
+            Thread.sleep(10000);
+          } catch (InterruptedException interruptedException) {
+            logger.error("Unsuccessful thread sleep during retry");
+          }
+          requestStart = System.currentTimeMillis();
+          // Third try
+          try {
+            this.apiInstance.getSkierDayVertical(this.resortID, this.dayID, skierIdForGET1);
+            long requestEnd = System.currentTimeMillis();
+            this.requestsCompleted.inc();
+            long latency = requestEnd - requestStart;
+            String requestDataRow = requestStart + "," + "GET1" + "," + latency + "," + "200" + "\n";
+            try {
+              this.queue.put(requestDataRow);
+            } catch (InterruptedException interruptedException2) {
+              System.out.println("Something went wrong while putting GET1 request data row into blocking queue, during 3rd retry");
+            }
+          } catch (ApiException eee) {
+            this.requestsFailed.inc();
+            logger.error("GET1 3rd retry failed. Not retrying again");
+          }
         }
       }
     }
@@ -206,22 +239,63 @@ public class RequestsThread implements Runnable {
         resortIdForGET2.add(this.resortID);
         long requestStart = System.currentTimeMillis();
 
+        // First try
         try {
           this.apiInstance.getSkierResortTotals(skierIdForGET2, resortIdForGET2);
           long requestEnd = System.currentTimeMillis();
           this.requestsCompleted.inc();
           long latency = requestEnd - requestStart;
-          String requestDataRow = String.valueOf(requestStart) + "," + "GET2" + "," + String.valueOf(latency) + "," + "200" + "\n";
-//        String requestDataRow = String.valueOf(this.requestsCompleted.getVal()) + "," + String.valueOf(requestStart) + "," + "GET2" + "," + String.valueOf(latency) + "," + "200" + "\n";
-
+          String requestDataRow = requestStart + "," + "GET2" + "," + latency + "," + "200" + "\n";
           try {
             this.queue.put(requestDataRow);
           } catch (InterruptedException e) {
             System.out.println("Something went wrong while putting GET2 request data row into blocking queue");
           }
         } catch(ApiException e) {
-          this.requestsFailed.inc();
-          logger.error("GET2 request failed in PHASE " + String.valueOf(this.phase));
+          logger.error("GET2 request failed in PHASE " + this.phase + ". Retrying a 2nd time");
+          try {
+            Thread.sleep(10000);
+          } catch (InterruptedException interruptedException) {
+            logger.error("Unsuccessful thread sleep during retry");
+          }
+          requestStart = System.currentTimeMillis();
+          // Second try
+          try {
+            this.apiInstance.getSkierResortTotals(skierIdForGET2, resortIdForGET2);
+            long requestEnd = System.currentTimeMillis();
+            this.requestsCompleted.inc();
+            long latency = requestEnd - requestStart;
+            String requestDataRow = requestStart + "," + "GET2" + "," + latency + "," + "200" + "\n";
+            try {
+              this.queue.put(requestDataRow);
+            } catch (InterruptedException interruptedException2) {
+              System.out.println("Something went wrong while putting GET2 request data row into blocking queue, during 2nd retry");
+            }
+          } catch (ApiException ee) {
+            logger.error("GET2 request failed in PHASE " + this.phase + ". Retrying a 3rd time");
+            try {
+              Thread.sleep(10000);
+            } catch (InterruptedException interruptedException) {
+              logger.error("Unsuccessful thread sleep during retry");
+            }
+            requestStart = System.currentTimeMillis();
+            // Third try
+            try {
+              this.apiInstance.getSkierResortTotals(skierIdForGET2, resortIdForGET2);
+              long requestEnd = System.currentTimeMillis();
+              this.requestsCompleted.inc();
+              long latency = requestEnd - requestStart;
+              String requestDataRow = requestStart + "," + "GET2" + "," + latency + "," + "200" + "\n";
+              try {
+                this.queue.put(requestDataRow);
+              } catch (InterruptedException interruptedException2) {
+                System.out.println("Something went wrong while putting GET2 request data row into blocking queue, during 3rd retry");
+              }
+            } catch (ApiException eee) {
+              this.requestsFailed.inc();
+              logger.error("GET2 3rd retry failed. Not retrying again");
+            }
+          }
         }
       }
       // GET2 requests ------------------------------------------------------------------------- END
