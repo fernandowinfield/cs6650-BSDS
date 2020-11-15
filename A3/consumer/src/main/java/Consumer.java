@@ -6,6 +6,7 @@ import java.io.IOException;
 
 public class Consumer {
   private static final String QUEUE_NAME = "postingQueue";
+  private static final int CONSUMER_THREADS_NUM = 200;
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -24,13 +25,14 @@ public class Consumer {
         try {
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE_NAME, true, false, false, null);
-          System.out.println(" [*] Thread waiting for messages. To exit press CTRL+C");
+//          System.out.println(" [*] Thread waiting for messages. To exit press CTRL+C");
           channel.basicQos(1);
 
 
           DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
-            System.out.println( " [x] Callback thread ID = " + Thread.currentThread().getId() + " Received '" + message + "'");
+            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
+//            System.out.println( " [x] Callback thread ID = " + Thread.currentThread().getId() + " Received '" + message + "'");
 
             String[] postData = message.split("-");
             String resortID = postData[0];
@@ -44,8 +46,12 @@ public class Consumer {
             LiftRideDao liftRideDao = new LiftRideDao();
             liftRideDao.createLiftRide(liftRide);
 
-            System.out.println(" [x] Done");
-            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
+            // TODO: do some stuff here to update "cache" table in database. For example:
+            //  - check if skierID (could be primary key for this table) exists.
+            //  - If it does, read the vertical value and += newVertical and save again.
+            //  - If SkierID not present, add new entry to table with value = newVertical.
+
+//            System.out.println(" [x] Done");
           };
 
           channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });
@@ -55,9 +61,12 @@ public class Consumer {
       }
     };
     // start threads and block to receive messages
-    Thread recv1 = new Thread(runnable);
-    Thread recv2 = new Thread(runnable);
-    recv1.start();
-    recv2.start();
+    for (int i = 0; i < CONSUMER_THREADS_NUM; i++) {
+      new Thread(runnable).start();
+    }
+//    Thread recv1 = new Thread(runnable);
+//    Thread recv2 = new Thread(runnable);
+//    recv1.start();
+//    recv2.start();
   }
 }

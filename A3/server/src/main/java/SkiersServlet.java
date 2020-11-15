@@ -153,7 +153,7 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         channel.basicPublish("", QUEUE_NAME,
             MessageProperties.PERSISTENT_TEXT_PLAIN,
             message.getBytes("UTF-8"));
-        System.out.println(" [x] Sent '" + message + "'");
+//        System.out.println(" [x] Sent '" + message + "'");
 
         // Send response status
         res.setStatus(HttpServletResponse.SC_CREATED);

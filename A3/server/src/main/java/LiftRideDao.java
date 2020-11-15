@@ -47,6 +47,7 @@ public class LiftRideDao {
   /*
    * For GET /skiers/{resortID}/days/{dayID}/skiers/{skierID}
    */
+  // TODO: update this if we decide to go with "cache" table strategy (only have to SELECT from "verticals cache" table)
   public int getVertical1(String resortID, String dayID, String skierID) {
     Connection conn = null;
     PreparedStatement preparedStatement = null;
@@ -82,6 +83,10 @@ public class LiftRideDao {
     return 0;
   }
 
+  /*
+   * For GET /skiers/{skierID}/vertical
+   */
+  // TODO: maybe can update this if we decide to go with "cache" table strategy (only have to SELECT from "verticals cache" table)
   public int getVertical2(String skierID, String resortID) {
     Connection conn = null;
     PreparedStatement preparedStatement = null;
