@@ -18,20 +18,21 @@
       <change beforePath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/out/experimentResults.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/DataWriterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/DataWriterThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/META-INF/client.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/DBCPDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/server_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/SkiersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/SkiersServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SkiersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SkiersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SkiersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SkiersServlet.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DBCPDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="240">
+              <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
               <folding>
                 <element signature="e#1532#1533#0" expanded="true" />
                 <element signature="e#1559#1560#0" expanded="true" />
@@ -68,30 +69,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SkiersServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="155" column="60" selection-start-line="155" selection-start-column="60" selection-end-line="155" selection-end-column="60" />
+            <state relative-caret-position="-799">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7457#7458#0" expanded="true" />
+                <element signature="e#7534#7535#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TestDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="81" selection-start-line="3" selection-start-column="81" selection-end-line="3" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/LiftRideDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+            <state relative-caret-position="525">
+              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#151#152#0" expanded="true" />
@@ -138,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/main/java/TestDatabase.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/SkiersServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/LiftRideDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" />
       </list>
     </option>
   </component>
@@ -225,7 +217,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605479204696" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605649243903" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -358,12 +350,12 @@
       <workItem from="1603668245862" duration="10293000" />
       <workItem from="1603931693737" duration="33000" />
       <workItem from="1605140943076" duration="1125000" />
-      <workItem from="1605419141353" duration="11384000" />
+      <workItem from="1605419141353" duration="16802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45047000" />
+    <option name="totallyTimeSpent" value="50465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
@@ -379,7 +371,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -543,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TestDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="81" selection-start-line="3" selection-start-column="81" selection-end-line="3" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LiftRide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -575,36 +560,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SkiersServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/TestDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="155" column="60" selection-start-line="155" selection-start-column="60" selection-end-line="155" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7457#7458#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DBCPDataSource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SkiersServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="-799">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
-            <element signature="e#1532#1533#0" expanded="true" />
-            <element signature="e#1559#1560#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LiftRideDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+        <state relative-caret-position="525">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#151#152#0" expanded="true" />
             <element signature="e#204#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DBCPDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding>
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1559#1560#0" expanded="true" />
           </folding>
         </state>
       </provider>

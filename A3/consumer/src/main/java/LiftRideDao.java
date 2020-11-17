@@ -44,20 +44,64 @@ public class LiftRideDao {
     }
   }
 
+  public void saveVerticalForRide(LiftRide newLiftRide) {
+    int totalVertical = 0;
+    Connection conn = null;
+    PreparedStatement preparedStatement = null;
+    String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
+    ResultSet results = null;
+    try {
+      conn = dataSource.getConnection();
+      preparedStatement = conn.prepareStatement(selectQueryStatement);
+      preparedStatement.setString(1, newLiftRide.getSkierID());
+      // Execute SELECT SQL statement
+      results = preparedStatement.executeQuery();
+
+      // If we have a result that means that we have "cached" for that skierID before, so we only update their vertical
+      if (results.next()) {
+        totalVertical = results.getInt("totalVertical");
+        String updateQueryStatement = "UPDATE Verticals SET vertical=? WHERE skierID=?;";
+        preparedStatement = conn.prepareStatement(updateQueryStatement);
+        preparedStatement.setInt(1, newLiftRide.getVertical() + totalVertical);
+        preparedStatement.setString(2, newLiftRide.getSkierID());
+        // execute UPDATE SQL statement
+        preparedStatement.executeUpdate();
+      } else {
+        String insertQueryStatement = "INSERT INTO Verticals (skierID, vertical) VALUES (?,?)";
+        preparedStatement = conn.prepareStatement(insertQueryStatement);
+        preparedStatement.setString(1, newLiftRide.getSkierID());
+        preparedStatement.setInt(2, newLiftRide.getVertical());
+        // execute INSERT SQL statement
+        preparedStatement.executeUpdate();
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        if (conn != null) {
+          conn.close();
+        }
+        if (preparedStatement != null) {
+          preparedStatement.close();
+        }
+      } catch (SQLException se) {
+        se.printStackTrace();
+      }
+    }
+  }
+
   /*
    * For GET /skiers/{resortID}/days/{dayID}/skiers/{skierID}
    */
   public int getVertical1(String resortID, String dayID, String skierID) {
     Connection conn = null;
     PreparedStatement preparedStatement = null;
-    String selectQueryStatement = "SELECT SUM(vertical) AS totalVertical FROM IkkyoneSkiing.LiftRides WHERE skierID=? AND dayID=? AND resortID=?;";
+    String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
       conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
-      preparedStatement.setString(2, dayID);
-      preparedStatement.setString(3, resortID);
 
       // execute SELECT SQL statement
       results = preparedStatement.executeQuery();

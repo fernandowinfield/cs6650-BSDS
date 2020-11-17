@@ -45,13 +45,9 @@ public class Consumer {
             LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
             LiftRideDao liftRideDao = new LiftRideDao();
             liftRideDao.createLiftRide(liftRide);
-
-            // TODO: do some stuff here to update "cache" table in database. For example:
-            //  - check if skierID (could be primary key for this table) exists.
-            //  - If it does, read the vertical value and += newVertical and save again.
-            //  - If SkierID not present, add new entry to table with value = newVertical.
-
-//            System.out.println(" [x] Done");
+//            System.out.println(" [x] Done saving lift ride");
+            liftRideDao.saveVerticalForRide(liftRide);
+//            System.out.println(" [x] Done updating vertical cache");
           };
 
           channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });

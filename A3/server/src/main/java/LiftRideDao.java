@@ -47,18 +47,25 @@ public class LiftRideDao {
   /*
    * For GET /skiers/{resortID}/days/{dayID}/skiers/{skierID}
    */
-  // TODO: update this if we decide to go with "cache" table strategy (only have to SELECT from "verticals cache" table)
   public int getVertical1(String resortID, String dayID, String skierID) {
     Connection conn = null;
     PreparedStatement preparedStatement = null;
-    String selectQueryStatement = "SELECT SUM(vertical) AS totalVertical FROM IkkyoneSkiing.LiftRides WHERE skierID=? AND dayID=? AND resortID=?;";
+
+    String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
       conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
-      preparedStatement.setString(2, dayID);
-      preparedStatement.setString(3, resortID);
+
+//    String selectQueryStatement = "SELECT SUM(vertical) AS totalVertical FROM IkkyoneSkiing.LiftRides WHERE skierID=? AND dayID=? AND resortID=?;";
+//    ResultSet results = null;
+//    try {
+//      conn = dataSource.getConnection();
+//      preparedStatement = conn.prepareStatement(selectQueryStatement);
+//      preparedStatement.setString(1, skierID);
+//      preparedStatement.setString(2, dayID);
+//      preparedStatement.setString(3, resortID);
 
       // execute SELECT SQL statement
       results = preparedStatement.executeQuery();

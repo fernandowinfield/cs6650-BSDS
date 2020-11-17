@@ -138,18 +138,18 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         res.getWriter().write("{\"error message\": \"invalid body content\"}");
       } else {
-        // Write lift ride to database
+        // Prepare message that will be sent to RabbitMQ
         String resortID = jsonMap.get("resortID");
         String dayID = jsonMap.get("dayID");
         String skierID = jsonMap.get("skierID");
         String time = jsonMap.get("time");
         String liftID = jsonMap.get("liftID");
-
         Channel channel = connection.createChannel();
         channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 
         String message = String.join("-", resortID, dayID, skierID, time, liftID);
 
+        // Write lift ride to RabbitMQ's queue as a message
         channel.basicPublish("", QUEUE_NAME,
             MessageProperties.PERSISTENT_TEXT_PLAIN,
             message.getBytes("UTF-8"));
