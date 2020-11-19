@@ -18,10 +18,19 @@ public class Consumer {
     factory.setPort(5672);
     final Connection connection = factory.newConnection();
 
+    // Make sure to close the RabbitMQ connection before program shutdown
+    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+      try {
+        connection.close();
+      } catch (IOException e) {
+        e.getStackTrace();
+      }
+    }));
 
     Runnable runnable = new Runnable() {
       @Override
       public void run() {
+        System.out.println("o");
         try {
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE_NAME, true, false, false, null);
@@ -46,10 +55,9 @@ public class Consumer {
             LiftRideDao liftRideDao = new LiftRideDao();
             liftRideDao.createLiftRide(liftRide);
 //            System.out.println(" [x] Done saving lift ride");
-            liftRideDao.saveVerticalForRide(liftRide);
+//            liftRideDao.saveVerticalForRide(liftRide);
 //            System.out.println(" [x] Done updating vertical cache");
           };
-
           channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });
         } catch (IOException e) {
           e.getStackTrace();

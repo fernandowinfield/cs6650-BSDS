@@ -28,6 +28,10 @@ public class LiftRideDao {
 
       // execute INSERT SQL statement
       preparedStatement.executeUpdate();
+
+      // Save vertical in Verticals table
+      saveVerticalForRide(newLiftRide, conn);
+
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
@@ -44,14 +48,12 @@ public class LiftRideDao {
     }
   }
 
-  public void saveVerticalForRide(LiftRide newLiftRide) {
+  public void saveVerticalForRide(LiftRide newLiftRide, Connection conn) {
     int totalVertical = 0;
-    Connection conn = null;
     PreparedStatement preparedStatement = null;
     String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
-      conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
       // Execute SELECT SQL statement
@@ -76,17 +78,6 @@ public class LiftRideDao {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-    } finally {
-      try {
-        if (conn != null) {
-          conn.close();
-        }
-        if (preparedStatement != null) {
-          preparedStatement.close();
-        }
-      } catch (SQLException se) {
-        se.printStackTrace();
-      }
     }
   }
 
