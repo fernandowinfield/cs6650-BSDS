@@ -30,8 +30,9 @@ public class Consumer {
     Runnable runnable = new Runnable() {
       @Override
       public void run() {
-        System.out.println("o");
+//        System.out.println("o");
         try {
+          LiftRideDao liftRideDao = new LiftRideDao();
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 //          System.out.println(" [*] Thread waiting for messages. To exit press CTRL+C");
@@ -52,12 +53,11 @@ public class Consumer {
             int vertical = Integer.valueOf(liftID) * 10;
 
             LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
-            LiftRideDao liftRideDao = new LiftRideDao();
+//            LiftRideDao liftRideDao = new LiftRideDao();
             liftRideDao.createLiftRide(liftRide);
 //            System.out.println(" [x] Done saving lift ride");
-//            liftRideDao.saveVerticalForRide(liftRide);
-//            System.out.println(" [x] Done updating vertical cache");
           };
+
           channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });
         } catch (IOException e) {
           e.getStackTrace();

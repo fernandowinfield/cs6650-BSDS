@@ -12,6 +12,8 @@ public class LiftRideDao {
    * For POST /skiers/liftrides
    */
   public void createLiftRide(LiftRide newLiftRide) {
+    System.out.println("Active: " + dataSource.getNumActive());
+    System.out.println("Idle: " + dataSource.getNumIdle());
     Connection conn = null;
     PreparedStatement preparedStatement = null;
     String insertQueryStatement = "INSERT INTO LiftRides (skierID, resortID, dayID, time, liftID, vertical) " +
@@ -30,7 +32,7 @@ public class LiftRideDao {
       preparedStatement.executeUpdate();
 
       // Save vertical in Verticals table
-      saveVerticalForRide(newLiftRide, conn);
+//      saveVerticalForRide(newLiftRide, conn);
 
     } catch (SQLException e) {
       e.printStackTrace();

@@ -19,18 +19,13 @@
       <change beforePath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/out/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/out/consumer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/DBCPDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/DBCPDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war/server_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DBCPDataSource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -147,9 +142,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="2406" />
+    <option name="x" value="1440" />
     <option name="y" value="-87" />
-    <option name="width" value="954" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -214,7 +209,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605776064292" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605828207761" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -347,12 +342,12 @@
       <workItem from="1603668245862" duration="10293000" />
       <workItem from="1603931693737" duration="33000" />
       <workItem from="1605140943076" duration="1125000" />
-      <workItem from="1605419141353" duration="21152000" />
+      <workItem from="1605419141353" duration="21751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54815000" />
+    <option name="totallyTimeSpent" value="55414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />

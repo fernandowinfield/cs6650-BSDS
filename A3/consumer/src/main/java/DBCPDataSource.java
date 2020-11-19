@@ -36,7 +36,7 @@ public class DBCPDataSource {
     dataSource.setPassword(PASSWORD);
     dataSource.setInitialSize(40);
     dataSource.setMaxTotal(50);
-    dataSource.setMaxIdle(50);
+//    dataSource.setMaxIdle(50);
   }
 
   public static BasicDataSource getDataSource() {
