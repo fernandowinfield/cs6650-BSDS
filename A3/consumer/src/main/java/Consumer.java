@@ -6,11 +6,10 @@ import java.io.IOException;
 
 public class Consumer {
   private static final String QUEUE_NAME = "postingQueue";
-  private static final int CONSUMER_THREADS_NUM = 20;
+  private static final int CONSUMER_THREADS_NUM = 100;
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-
     factory.setUsername("root");
     factory.setPassword("chipsNguac");
     factory.setVirtualHost("/");

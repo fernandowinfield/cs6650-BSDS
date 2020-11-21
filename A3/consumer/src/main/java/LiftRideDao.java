@@ -1,25 +1,21 @@
 import java.sql.*;
-import org.apache.commons.dbcp2.*;
 
 public class LiftRideDao {
-  private static BasicDataSource dataSource;
-
-  public LiftRideDao() {
-    dataSource = DBCPDataSource.getDataSource();
-  }
+  public LiftRideDao() { }
 
   /*
    * For POST /skiers/liftrides
    */
   public void createLiftRide(LiftRide newLiftRide) {
-    System.out.println("Active: " + dataSource.getNumActive());
-    System.out.println("Idle: " + dataSource.getNumIdle());
+//    System.out.println("Active: " + dataSource.getNumActive());
+//    System.out.println("Idle: " + dataSource.getNumIdle());
     Connection conn = null;
     PreparedStatement preparedStatement = null;
     String insertQueryStatement = "INSERT INTO LiftRides (skierID, resortID, dayID, time, liftID, vertical) " +
         "VALUES (?,?,?,?,?,?)";
     try {
-      conn = dataSource.getConnection();
+//      conn = dataSource.getConnection();
+      conn = HikariDbPool.getConnection();
       preparedStatement = conn.prepareStatement(insertQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
       preparedStatement.setString(2, newLiftRide.getResortID());
@@ -92,7 +88,7 @@ public class LiftRideDao {
     String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
-      conn = dataSource.getConnection();
+      conn = HikariDbPool.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
 
@@ -125,7 +121,7 @@ public class LiftRideDao {
     String selectQueryStatement = "SELECT SUM(vertical) AS totalVertical FROM IkkyoneSkiing.LiftRides WHERE skierID=? AND resortID=?;";
     ResultSet results = null;
     try {
-      conn = dataSource.getConnection();
+      conn = HikariDbPool.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
       preparedStatement.setString(2, resortID);
