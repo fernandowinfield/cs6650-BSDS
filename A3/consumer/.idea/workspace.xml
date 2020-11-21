@@ -19,14 +19,9 @@
       <change beforePath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/consumer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Consumer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Consumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DBCPDataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -76,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+            <state relative-caret-position="120">
+              <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,7 +190,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="consumer" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605933807922" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605933994407" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -239,15 +234,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605420575671</updated>
-      <workItem from="1605420577072" duration="52037000" />
+      <workItem from="1605420577072" duration="52227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52037000" />
+    <option name="totallyTimeSpent" value="52227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -415,8 +411,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+        <state relative-caret-position="120">
+          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -482,6 +478,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
