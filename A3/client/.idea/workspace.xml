@@ -18,11 +18,22 @@
       <change beforePath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataWriterThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataWriterThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../consumer/out/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/out/consumer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/out/consumer.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/HikariDbPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/HikariDbPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/HikariDbPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/HikariDbPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war/server_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/DBCPDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/DBCPDataSource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,8 +144,8 @@
         <option value="$PROJECT_DIR$/out/experimentResults.csv" />
         <option value="$PROJECT_DIR$/src/main/java/RequestsThread.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataWriterThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Client.java" />
       </list>
     </option>
   </component>
@@ -201,7 +212,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605933994396" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605993490505" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -268,12 +279,12 @@
       <workItem from="1603668245631" duration="30606000" />
       <workItem from="1603931693012" duration="162000" />
       <workItem from="1605399781768" duration="1051000" />
-      <workItem from="1605419194386" duration="12783000" />
+      <workItem from="1605419194386" duration="13762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69990000" />
+    <option name="totallyTimeSpent" value="70969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
@@ -518,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

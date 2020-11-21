@@ -28,7 +28,7 @@ public class LiftRideDao {
       preparedStatement.executeUpdate();
 
       // Save vertical in Verticals table
-//      saveVerticalForRide(newLiftRide, conn);
+      saveVerticalForRide(newLiftRide, conn);
 
     } catch (SQLException e) {
       e.printStackTrace();

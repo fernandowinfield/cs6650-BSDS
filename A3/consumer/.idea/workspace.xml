@@ -18,11 +18,22 @@
       <change beforePath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/client/target/classes/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A2/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/DataWriterThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/DataWriterThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/consumer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/consumer.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HikariDbPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HikariDbPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HikariDbPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HikariDbPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LiftRideDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war/server_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/DBCPDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/DBCPDataSource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,14 +45,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LiftRide.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/HikariDbPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="285">
+              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
               <folding>
-                <element signature="e#893#894#0" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,29 +60,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/LiftRideDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+            <state relative-caret-position="450">
+              <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/HikariDbPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,9 +100,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/LiftRide.java" />
         <option value="$PROJECT_DIR$/src/main/java/DBCPDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/HikariDbPool.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/LiftRideDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/HikariDbPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/Consumer.java" />
       </list>
     </option>
@@ -190,7 +188,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="consumer" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605933994407" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605993490514" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -234,12 +232,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605420575671</updated>
-      <workItem from="1605420577072" duration="52227000" />
+      <workItem from="1605420577072" duration="53883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52227000" />
+    <option name="totallyTimeSpent" value="53883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
@@ -378,16 +376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/HikariDbPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -404,15 +392,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LiftRideDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+        <state relative-caret-position="450">
+          <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/HikariDbPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
