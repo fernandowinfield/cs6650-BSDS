@@ -14,10 +14,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Client {
   // Single server setting
-  //private static final String BASE_URL_PATH = "http://ec2-34-224-2-148.compute-1.amazonaws.com:8080/server_war";
+  private static final String BASE_URL_PATH = "http://ec2-34-224-2-148.compute-1.amazonaws.com:8080/server_war";
 
   // Load balancer & 4 server instances setting
-  private static final String BASE_URL_PATH = "http://cs6650-loadbalancer-122971422.us-east-1.elb.amazonaws.com:8080/server_war";
+//  private static final String BASE_URL_PATH = "http://cs6650-loadBalancer-2105365642.us-east-1.elb.amazonaws.com:8080/server_war";
 
 
   /*

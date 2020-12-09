@@ -7,6 +7,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * A3 code for using Consumer (Part 1)
+ */
+/*
+import java.util.concurrent.TimeoutException;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
+*/
+
 public class SkiersServlet extends javax.servlet.http.HttpServlet {
   private final int GET_1_PARAMS_NUM = 5;
   private final int GET_2_PARAMS_NUM = 2;
@@ -18,6 +29,40 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
   private final String LIFTRIDES_PARAM = "liftrides";
 
   private final String[] POST_BODY_KEYS = {"resortID", "dayID", "skierID", "time", "liftID"};
+
+  /**
+   * A3 code for using Consumer (Part 2)
+   */
+  /*
+  private final String QUEUE_NAME = "postingQueue";
+  private Connection connection;
+
+  @Override
+  public void init() throws ServletException {
+    super.init();
+    ConnectionFactory factory = new ConnectionFactory();
+    factory.setUsername("root");
+    factory.setPassword("chipsNguac");
+    factory.setVirtualHost("/");
+    factory.setHost("ec2-100-25-170-47.compute-1.amazonaws.com");
+    factory.setPort(5672);
+    try {
+      connection = factory.newConnection();
+    } catch (Exception e) {
+      e.getStackTrace();
+    }
+  }
+
+  @Override
+  public void destroy() {
+    super.destroy();
+    try {
+      connection.close();
+    } catch (IOException e) {
+      e.getStackTrace();
+    }
+  }
+  */
 
   /**
    * GET /skiers/*
@@ -104,7 +149,7 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         res.getWriter().write("{\"error message\": \"invalid body content\"}");
       } else {
-        // Write lift ride to database
+        // Write lift ride to database / Prepare message that will be sent to RabbitMQ
         String resortID = jsonMap.get("resortID");
         String dayID = jsonMap.get("dayID");
         String skierID = jsonMap.get("skierID");
@@ -114,9 +159,39 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
         LiftRideDao liftRideDao = new LiftRideDao();
         liftRideDao.createLiftRide(liftRide);
+//        liftRideDao.saveVerticalForRide(liftRide);
+
+        /**
+         * A3 code for using Consumer (Part 3)
+         */
+        /*
+        Channel channel = connection.createChannel();
+        channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+
+        String message = String.join("-", resortID, dayID, skierID, time, liftID);
+
+        // Write lift ride to RabbitMQ's queue as a message
+        channel.basicPublish("", QUEUE_NAME,
+            MessageProperties.PERSISTENT_TEXT_PLAIN,
+            message.getBytes("UTF-8"));
+//        System.out.println(" [x] Sent '" + message + "'");
+        */
 
         // Send response status
         res.setStatus(HttpServletResponse.SC_CREATED);
+
+        /**
+         * A3 code for using Consumer (Part 4)
+         */
+        /*
+        // Close RabbitMQ channel
+        try {
+          channel.close();
+        } catch (TimeoutException e) {
+          System.out.println("Something went wrong closing a RabbitMQ channel");
+          e.getStackTrace();
+        }
+        */
       }
     }
   }
@@ -137,7 +212,7 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
       return areGet2ParamsValid(
           urlParts[0],
           urlParts[1]
-          );
+      );
     } else if (urlParts.length == POST_PARAMS_NUM) { // Case 3: POST
       return arePostParamsValid(urlParts[0]);
     }
@@ -145,16 +220,16 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
   }
 
   private boolean areGet1ParamsValid(String param1,
-                                     String param2,
-                                     String param3,
-                                     String param4,
-                                     String param5) {
+      String param2,
+      String param3,
+      String param4,
+      String param5) {
     return (!param1.equals("") & !param3.equals("") & !param5.equals(""))
         && (param2.equals(DAYS_PARAM) && param4.equals(SKIERS_PARAM));
   }
 
   private boolean areGet2ParamsValid(String param1,
-                                     String param2) {
+      String param2) {
     return (!param1.equals("")) && (param2.equals(VERTICAL_PARAM));
   }
 
