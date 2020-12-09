@@ -159,7 +159,7 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
         LiftRideDao liftRideDao = new LiftRideDao();
         liftRideDao.createLiftRide(liftRide);
-//        liftRideDao.saveVerticalForRide(liftRide);
+        liftRideDao.saveVerticalForRide(liftRide);
 
         /**
          * A3 code for using Consumer (Part 3)

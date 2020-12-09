@@ -60,6 +60,7 @@ public class LiftRideDao {
     ResultSet results = null;
     try {
 //      conn = HikariDbPool.getConnection();
+      conn = HikariDbPool2.getConnection();
 //      conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
@@ -154,7 +155,8 @@ public class LiftRideDao {
     String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
-      conn = HikariDbPool.getConnection();
+//      conn = HikariDbPool.getConnection();
+      conn = HikariDbPool2.getConnection();
 //      conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
@@ -237,7 +239,8 @@ public class LiftRideDao {
     String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
-      conn = HikariDbPool.getConnection();
+//      conn = HikariDbPool.getConnection();
+      conn = HikariDbPool2.getConnection();
 //      conn = dataSource.getConnection();
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
