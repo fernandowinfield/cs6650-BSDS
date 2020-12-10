@@ -155,6 +155,10 @@ public class SkiersServlet extends javax.servlet.http.HttpServlet {
         String skierID = jsonMap.get("skierID");
         String time = jsonMap.get("time");
         String liftID = jsonMap.get("liftID");
+
+        /**
+         * A4 code for standard server setup (write and read directly from server)
+         */
         int vertical = Integer.valueOf(liftID) * 10;
         LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
         LiftRideDao liftRideDao = new LiftRideDao();

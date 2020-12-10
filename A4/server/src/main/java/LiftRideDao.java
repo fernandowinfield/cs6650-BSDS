@@ -1,12 +1,8 @@
 import java.sql.*;
-//import org.apache.commons.dbcp2.*;
 
 public class LiftRideDao {
-//  private static BasicDataSource dataSource;
 
-  public LiftRideDao() {
-//    dataSource = DBCPDataSource.getDataSource();
-  }
+  public LiftRideDao() { }
 
   /*
    * For POST /skiers/liftrides
@@ -21,7 +17,8 @@ public class LiftRideDao {
         "VALUES (?,?,?,?,?,?)";
     try {
       conn = HikariDbPool.getConnection();
-//      conn = dataSource.getConnection();
+//      conn = HikariDbPool2.getConnection();
+
       preparedStatement = conn.prepareStatement(insertQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
       preparedStatement.setString(2, newLiftRide.getResortID());
@@ -61,7 +58,7 @@ public class LiftRideDao {
     try {
 //      conn = HikariDbPool.getConnection();
       conn = HikariDbPool2.getConnection();
-//      conn = dataSource.getConnection();
+
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
 
@@ -157,7 +154,7 @@ public class LiftRideDao {
     try {
 //      conn = HikariDbPool.getConnection();
       conn = HikariDbPool2.getConnection();
-//      conn = dataSource.getConnection();
+
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
 
@@ -241,7 +238,7 @@ public class LiftRideDao {
     try {
 //      conn = HikariDbPool.getConnection();
       conn = HikariDbPool2.getConnection();
-//      conn = dataSource.getConnection();
+
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, skierID);
 

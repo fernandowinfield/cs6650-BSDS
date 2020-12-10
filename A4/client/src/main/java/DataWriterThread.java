@@ -27,9 +27,6 @@ public class DataWriterThread implements Runnable {
 
   @Override
   public void run() {
-    // TODO: maybe use `while(requestsCompleted.getVal() + requestsFailed.getVal() < someNum...)`
-    // TODO: continued... another option is to sleep this thread for a few seconds and then just leave `while(!queue.isEmpty())`
-    // TODO: try `flush()`. Once at the end or after every write
     while (allPhasesCompleted.getCount() > 0 || !queue.isEmpty()) {
       try {
         String dataToWrite = queue.take();
@@ -44,7 +41,6 @@ public class DataWriterThread implements Runnable {
     }
 
     try {
-//      this.bufferedWriter.flush();
       this.bufferedWriter.close();
     } catch (IOException e) {
       System.out.println("Something went wrong while trying close the buffered writer");
