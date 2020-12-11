@@ -24,27 +24,39 @@
       <change beforePath="$PROJECT_DIR$/../../A3/consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A3/consumer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A3/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A3/server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataWriterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataWriterThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataWriterThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataWriterThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/artifacts/server_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/artifacts/server_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/.idea/artifacts/consumer_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/.idea/artifacts/consumer_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/consumer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/out/consumer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/out/consumer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/HikariDbPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/HikariDbPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/src/main/java/LiftRideDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/HikariDbPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/HikariDbPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/target/classes/LiftRideDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/target/classes/META-INF/consumer.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war/server_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war/server_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/HikariDbPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/HikariDbPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/HikariDbPool2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/HikariDbPool2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/LiftRideDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/DBCPDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/SkiersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/SkiersServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/classes/TestDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/lib/commons-dbcp-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_war_exploded/WEB-INF/lib/commons-pool-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/HikariDbPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/HikariDbPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/HikariDbPool2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/HikariDbPool2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/HikariDbPool2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/LiftRideDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/LiftRideDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/SkiersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/SkiersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/DBCPDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/TestDatabase.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/HikariDbPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/HikariDbPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/HikariDbPool2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/HikariDbPool2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/HikariDbPool2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/LiftRideDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/LiftRideDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/META-INF/server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/SkiersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/SkiersServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/TestDatabase.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="130" selection-start-line="19" selection-start-column="130" selection-end-line="19" selection-end-column="130" />
+              <caret line="19" column="130" lean-forward="true" selection-start-line="19" selection-start-column="130" selection-end-line="19" selection-end-column="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,9 +180,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="2406" />
+    <option name="x" value="1440" />
     <option name="y" value="-87" />
-    <option name="width" value="954" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -223,7 +235,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607577335814" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607655021634" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -253,7 +265,7 @@
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="client" />
-      <option name="PROGRAM_PARAMETERS" value="maxThreads-64 numSkiers-20000 numLifts-40" />
+      <option name="PROGRAM_PARAMETERS" value="maxThreads-32 numSkiers-20000 numLifts-40" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,18 +305,18 @@
       <workItem from="1605419194386" duration="13762000" />
       <workItem from="1607476628186" duration="727000" />
       <workItem from="1607484236762" duration="94000" />
-      <workItem from="1607540682764" duration="1480000" />
+      <workItem from="1607540682764" duration="3360000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73270000" />
+    <option name="totallyTimeSpent" value="75150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-87" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.27848774" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.27848774" />
       <window_info id="Structure" order="1" sideWeight="0.5009901" side_tool="true" weight="0.24973376" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -498,7 +510,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/out/experimentResults.csv" />
-    <entry file="file://$PROJECT_DIR$/out/experimentResults.csv" />
     <entry file="file://$PROJECT_DIR$/src/main/java/RequestsThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
@@ -533,10 +544,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/experimentResults.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="130" selection-start-line="19" selection-start-column="130" selection-end-line="19" selection-end-column="130" />
+          <caret line="19" column="130" lean-forward="true" selection-start-line="19" selection-start-column="130" selection-end-line="19" selection-end-column="130" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

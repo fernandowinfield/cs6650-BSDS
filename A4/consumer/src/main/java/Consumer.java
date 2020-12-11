@@ -6,14 +6,14 @@ import java.io.IOException;
 
 public class Consumer {
   private static final String QUEUE_NAME = "postingQueue";
-  private static final int CONSUMER_THREADS_NUM = 250;
+  private static final int CONSUMER_THREADS_NUM = 100;
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
     factory.setUsername("root");
     factory.setPassword("chipsNguac");
     factory.setVirtualHost("/");
-    factory.setHost("ec2-100-25-170-47.compute-1.amazonaws.com");
+    factory.setHost("ec2-18-234-121-229.compute-1.amazonaws.com");
     factory.setPort(5672);
     final Connection connection = factory.newConnection();
 
@@ -29,7 +29,6 @@ public class Consumer {
     Runnable runnable = new Runnable() {
       @Override
       public void run() {
-//        System.out.println("o");
         try {
           LiftRideDao liftRideDao = new LiftRideDao();
           final Channel channel = connection.createChannel();
@@ -40,7 +39,6 @@ public class Consumer {
 
           DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
-            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
 //            System.out.println( " [x] Callback thread ID = " + Thread.currentThread().getId() + " Received '" + message + "'");
 
             String[] postData = message.split("-");
@@ -52,8 +50,9 @@ public class Consumer {
             int vertical = Integer.valueOf(liftID) * 10;
 
             LiftRide liftRide = new LiftRide(resortID, dayID, skierID, time, liftID, vertical);
-//            LiftRideDao liftRideDao = new LiftRideDao();
             liftRideDao.createLiftRide(liftRide);
+            liftRideDao.saveVerticalForRide(liftRide);
+            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
 //            System.out.println(" [x] Done saving lift ride");
           };
 
@@ -67,9 +66,5 @@ public class Consumer {
     for (int i = 0; i < CONSUMER_THREADS_NUM; i++) {
       new Thread(runnable).start();
     }
-//    Thread recv1 = new Thread(runnable);
-//    Thread recv2 = new Thread(runnable);
-//    recv1.start();
-//    recv2.start();
   }
 }

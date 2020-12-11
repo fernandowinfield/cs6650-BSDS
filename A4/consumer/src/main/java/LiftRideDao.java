@@ -7,15 +7,13 @@ public class LiftRideDao {
    * For POST /skiers/liftrides
    */
   public void createLiftRide(LiftRide newLiftRide) {
-//    System.out.println("Active: " + dataSource.getNumActive());
-//    System.out.println("Idle: " + dataSource.getNumIdle());
     Connection conn = null;
     PreparedStatement preparedStatement = null;
     String insertQueryStatement = "INSERT INTO LiftRides (skierID, resortID, dayID, time, liftID, vertical) " +
         "VALUES (?,?,?,?,?,?)";
     try {
-//      conn = dataSource.getConnection();
       conn = HikariDbPool.getConnection();
+
       preparedStatement = conn.prepareStatement(insertQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
       preparedStatement.setString(2, newLiftRide.getResortID());
@@ -26,9 +24,6 @@ public class LiftRideDao {
 
       // execute INSERT SQL statement
       preparedStatement.executeUpdate();
-
-      // Save vertical in Verticals table
-      saveVerticalForRide(newLiftRide, conn);
 
     } catch (SQLException e) {
       e.printStackTrace();
@@ -46,14 +41,18 @@ public class LiftRideDao {
     }
   }
 
-  public void saveVerticalForRide(LiftRide newLiftRide, Connection conn) {
+  public void saveVerticalForRide(LiftRide newLiftRide) {
+    Connection conn = null;
     int totalVertical = 0;
     PreparedStatement preparedStatement = null;
     String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
     ResultSet results = null;
     try {
+      conn = HikariDbPool2.getConnection();
+
       preparedStatement = conn.prepareStatement(selectQueryStatement);
       preparedStatement.setString(1, newLiftRide.getSkierID());
+
       // Execute SELECT SQL statement
       results = preparedStatement.executeQuery();
 
@@ -76,30 +75,6 @@ public class LiftRideDao {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-    }
-  }
-
-  /*
-   * For GET /skiers/{resortID}/days/{dayID}/skiers/{skierID}
-   */
-  public int getVertical1(String resortID, String dayID, String skierID) {
-    Connection conn = null;
-    PreparedStatement preparedStatement = null;
-    String selectQueryStatement = "SELECT vertical AS totalVertical from IkkyoneSkiing.Verticals WHERE skierID=?;";
-    ResultSet results = null;
-    try {
-      conn = HikariDbPool.getConnection();
-      preparedStatement = conn.prepareStatement(selectQueryStatement);
-      preparedStatement.setString(1, skierID);
-
-      // execute SELECT SQL statement
-      results = preparedStatement.executeQuery();
-      if (results.next()) {
-        int totalVertical = results.getInt("totalVertical");
-        return totalVertical;
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
     } finally {
       try {
         if (conn != null) {
@@ -112,40 +87,5 @@ public class LiftRideDao {
         se.printStackTrace();
       }
     }
-    return 0;
-  }
-
-  public int getVertical2(String skierID, String resortID) {
-    Connection conn = null;
-    PreparedStatement preparedStatement = null;
-    String selectQueryStatement = "SELECT SUM(vertical) AS totalVertical FROM IkkyoneSkiing.LiftRides WHERE skierID=? AND resortID=?;";
-    ResultSet results = null;
-    try {
-      conn = HikariDbPool.getConnection();
-      preparedStatement = conn.prepareStatement(selectQueryStatement);
-      preparedStatement.setString(1, skierID);
-      preparedStatement.setString(2, resortID);
-
-      // execute SELECT SQL statement
-      results = preparedStatement.executeQuery();
-      if (results.next()) {
-        int totalVertical = results.getInt("totalVertical");
-        return totalVertical;
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      try {
-        if (conn != null) {
-          conn.close();
-        }
-        if (preparedStatement != null) {
-          preparedStatement.close();
-        }
-      } catch (SQLException se) {
-        se.printStackTrace();
-      }
-    }
-    return 0;
   }
 }
